@@ -1,26 +1,29 @@
-<h1>Candidate</h1>
-<div>
-<mat-card id="card" class="myCard">
-      <mat-checkbox class="checkboxes-left" [(ngModel)]="checked"
-        >Male</mat-checkbox
+<h1 style="margin-left:10px">Candidate</h1>
+<div class="example-margin">
+  <mat-card id="card" class="myClass">
+    <!-- Checkbox group -->
+    <mat-checkbox class="checkboxes-left" [(ngModel)]="checked"
+      >Male</mat-checkbox
+    >
+    <mat-checkbox class="checkboxes-center" [(ngModel)]="unchecked"
+      >Female</mat-checkbox
+    >
+
+    <!-- Search bar -->
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>🔎</mat-label>
+      <input matInput type="text" [(ngModel)]="value" placeholder="Search" />
+      <button
+        *ngIf="value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="value = ''"
       >
-      <mat-checkbox class="checkboxes-center" [(ngModel)]="unchecked"
-        >Female</mat-checkbox
-      >
-      <mat-form-field class="example-form-field" appearance="fill">
-        <mat-label>🔎</mat-label>
-        <input matInput type="text" [(ngModel)]="value" />
-        <button
-          *ngIf="value"
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          (click)="value = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-form-field>
-</mat-card>
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </mat-card>
 </div>
 
 <!-- Table for JSON data -->

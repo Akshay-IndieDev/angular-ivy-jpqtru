@@ -7,10 +7,11 @@ p {
 }
 
 .example-form-field {
-  width: 400px;
+  width: 250px;
+  align-self: center;
 }
-.myCard{
-  height: min-content;
+.myClass{
+  padding: 0%;
 }
 
 ::ng-deep .mat-checkbox-ripple .mat-ripple-element {
@@ -23,7 +24,7 @@ p {
 
 .checkboxes-left {
   text-align: center;
-  margin-left: 0px;
+  margin-left: 10px;
 }
 
 .checkboxes-center {

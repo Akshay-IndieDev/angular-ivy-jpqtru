@@ -19,5 +19,5 @@ export class AppComponent {
   Users: USERS[] = UsersJson;
   checked = true;
   unchecked = false;
-  value = 'Search';
+  value = '';
 }
