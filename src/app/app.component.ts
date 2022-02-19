@@ -17,5 +17,5 @@ interface USERS {
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
   Users: USERS[] = UsersJson;
-  value = 'OK';
+  value = 'Clear me';
 }
