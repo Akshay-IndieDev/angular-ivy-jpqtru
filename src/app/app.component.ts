@@ -17,7 +17,5 @@ interface USERS {
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
   Users: USERS[] = UsersJson;
-  checked = true;
-  unchecked = false;
-  value = '';
+  value = 'OK';
 }
