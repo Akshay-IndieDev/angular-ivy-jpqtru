@@ -8,7 +8,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -18,7 +17,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCheckboxModule,
     MatInputModule,
     MatIconModule,
-    FlexLayoutModule,
   ],
   declarations: [AppComponent, HelloComponent],
   bootstrap: [AppComponent],
