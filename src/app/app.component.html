@@ -1,16 +1,30 @@
-<hello name="{{ name }}"></hello>
-<div class="checkboxes">
-  <span>
-    <input name="male" type="checkbox" /><label>Male</label>
-    <input name="female" type="checkbox" /><label>Female</label>
-  </span>
+<h1>Candidate</h1>
+<mat-card id="card" class="myCard">
+  <div>
+    <mat-card-content>
+      <mat-checkbox class="checkboxes-left" [(ngModel)]="checked"
+        >Male</mat-checkbox
+      >
+      <mat-checkbox class="checkboxes-center" [(ngModel)]="unchecked"
+        >Female</mat-checkbox
+      >
+      <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>🔎</mat-label>
+        <input matInput type="text" [(ngModel)]="value" />
+        <button
+          *ngIf="value"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="value = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </mat-card-content>
+  </div>
+</mat-card>
 
-  <input
-    type="search"
-    name="searchBox"
-    placeholder="What are you looking for?"
-  />
-</div>
 <!-- Table for JSON data -->
 <div>
   <table id="userTable">

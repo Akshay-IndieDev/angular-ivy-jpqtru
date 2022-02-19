@@ -1,16 +1,35 @@
 p {
   font-family: Lato;
 }
-.checkboxes {
-  text-align: left;
-  margin-top: 50px;
-}
-.checkboxes input {
-  margin: 0px 0px 0px 0px;
+
+.example-margin {
+  margin: 0px 10px;
 }
 
-.checkboxes label {
-  margin: 0px 50px 0px 3px;
+.example-form-field {
+  width: 400px;
+}
+.myCard{
+  height: min-content;
+}
+
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+  background-color: rgb(68, 66, 77) !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: rgb(35, 63, 216) !important;
+}
+
+.checkboxes-left {
+  text-align: center;
+  margin-left: 0px;
+}
+
+.checkboxes-center {
+  text-align: center;
+  margin-left: 20%;
+  padding-right: 300px;
 }
 
 .myLastNamebox {
