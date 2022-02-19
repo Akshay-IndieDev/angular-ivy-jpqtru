@@ -11,11 +11,12 @@ p {
 }
 
 .example-section {
-  margin: 12px 0;
+  margin: 12px 0px;
 }
 
 .example-form-field {
-  width: 200px;
+  width: 600px;
+  margin-left: 250px;
 }
 
 .myCard {
@@ -33,11 +34,13 @@ p {
 .checkboxes-left {
   text-align: left;
   margin-left: 10px;
+  margin-top: 15px;
 }
 
 .checkboxes-center {
   text-align: center;
-  margin-left: 90px;
+  margin-left: 180px;
+  margin-top: 15px;
 }
 
 .myLastNamebox {
