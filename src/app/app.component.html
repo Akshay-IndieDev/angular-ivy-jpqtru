@@ -3,10 +3,15 @@
   <form layout-align="center center" layout="column" style="display: flex">
     <!-- Checkbox group -->
     <section class="example-section">
-      <mat-checkbox class="checkboxes-left">Male</mat-checkbox>
-      <mat-checkbox class="checkboxes-center">Female</mat-checkbox>
+      <mat-checkbox>Male</mat-checkbox>
+      <mat-checkbox
+        style="
+      margin-left: 350px;
+  "
+        >Female</mat-checkbox
+      >
     </section>
-
+    <!-- Search Bar -->
     <mat-form-field class="example-form-field" appearance="fill">
       <mat-label>Search🔎</mat-label>
       <input matInput type="text" [(ngModel)]="value" />
@@ -25,7 +30,7 @@
 
 <!-- Table for JSON data -->
 <div>
-  <table id="userTable">
+  <table id="userTable" class="myTable">
     <thead>
       <tr>
         <th>Id</th>
