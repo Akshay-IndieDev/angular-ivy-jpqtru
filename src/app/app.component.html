@@ -1,4 +1,70 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="checkboxes">
+  <span>
+    <input name="male" type="checkbox" /><label>Male</label>
+    <input name="female" type="checkbox" /><label>Female</label>
+  </span>
+
+  <input
+    type="search"
+    name="searchBox"
+    placeholder="What are you looking for?"
+  />
+</div>
+<!-- Table for JSON data -->
+<div>
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of Users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.gender }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h1>Add New Candidate</h1>
+
+  <input
+    id="firstName"
+    class="myFirstNamebox"
+    type="text"
+    placeholder="First Name"
+  />
+
+  <input
+    id="lastName"
+    class="myLastNamebox"
+    type="text"
+    placeholder="LastName"
+  />
+
+  <input
+    id="email"
+    class="myEmailText"
+    type="text"
+    name="email"
+    placeholder="Email"
+  />
+
+  <div class="checkboxes">
+    <span>
+      <input name="male" type="checkbox" /><label>Male</label>
+      <input name="female" type="checkbox" /><label>Female</label>
+    </span>
+    <button type="button" id="addButton" onclick="addUser();">Add</button>
+  </div>
+</div>
