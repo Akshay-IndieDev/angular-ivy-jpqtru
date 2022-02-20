@@ -9,6 +9,16 @@ p {
 ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
   padding: 0px !important;
 }
+.myButton {
+  background-color: #336dff;
+  text-decoration: solid;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  border-radius: 10px;
+  width: 100px;
+  font-weight: 500;
+  font-size: larger;
+}
 
 .name-fields {
   width: 50px;

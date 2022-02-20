@@ -1,7 +1,14 @@
 import { Component, VERSION } from '@angular/core';
 import UsersJson from '../assets/users.json';
-import {FormGroup, FormBuilder, FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import {
+  FormGroup,
+  FormBuilder,
+  FormControl,
+  FormGroupDirective,
+  NgForm,
+  Validators,
+} from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
 
 interface USERS {
   id: number;
@@ -21,11 +28,22 @@ export class AppComponent {
   Users: USERS[] = UsersJson;
   value = '';
   userAddressValidations: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
   ngOnInit() {
     this.userAddressValidations = this.formBuilder.group({
-      firstName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20), Validators.pattern('[a-zA-Z]+')]]
+      firstName: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(20),
+          Validators.pattern('[a-zA-Z]+'),
+        ],
+      ],
     });
-
   }
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
 }
