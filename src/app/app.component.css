@@ -34,7 +34,7 @@ p {
 }
 
 .example-margin {
-  margin: 0px 10px;
+  margin: 0px 0px;
 }
 
 .example-section {
@@ -69,16 +69,27 @@ p {
   font-size: 16px;
 }
 
+.example-container.mat-elevation-z8 {
+  border-radius: 3em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: transparent !important;
+}
+
 #userTable thead,
 #userTable th {
-  background-color: rgb(127, 168, 255);
+  background-color: rgb(89, 146, 231);
   text-align: center;
   font-weight: 600;
   font-size: 14px;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 30px;
   align-items: center;
-  color: rgb(19, 38, 148);
+  color: rgb(255, 255, 255);
+  border-bottom: none;
 }
 
 #userTable td {
@@ -88,14 +99,12 @@ p {
   margin-bottom: 30px;
   align-items: center;
   width: 100%;
+  border-top: none;
+  border-bottom: none;
 }
 
 .example-container.mat-elevation-z8 {
-  margin-top: 30px;
-}
-
-.bottomForm {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .mat-column-id {
@@ -158,4 +167,8 @@ p {
   -webkit-hyphens: auto;
   hyphens: auto;
   padding-right: 24px !important;
+}
+
+.noMargin{
+  margin:25px 0px;
 }

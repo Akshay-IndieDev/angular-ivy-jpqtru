@@ -1,4 +1,4 @@
-<h1 style="margin-left:10px">Candidates</h1>
+<h1 class="noMargin" style="margin-left:10px">Candidates</h1>
 <div class="example-margin">
   <form layout-align="center center" layout="column" style="display: flex">
     <!-- Checkbox group -->
@@ -62,8 +62,8 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 </div>
-<div class="bottomForm">
-  <h1>Add New Candidate</h1>
+<div>
+  <h1 class="noMargin">Add New Candidate</h1>
 
   <form class="example-form" [formGroup]="userAddressValidations">
     <table class="example-full-width" cellspacing="3" style="border:none">
