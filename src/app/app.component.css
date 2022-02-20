@@ -10,6 +10,19 @@ p {
   padding: 0px !important;
 }
 
+.name-fields {
+  width: 50px;
+}
+
+.example-form {
+  min-width: 150px;
+  width: 98%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
 .example-margin {
   margin: 0px 10px;
 }
@@ -21,7 +34,6 @@ p {
 
 .example-form-field {
   width: 50%;
-  display: inline;
 }
 
 .myCard {

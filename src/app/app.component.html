@@ -55,7 +55,7 @@
 <div>
   <h1>Add New Candidate</h1>
 
-  <input
+  <!-- <input
     id="firstName"
     class="myFirstNamebox"
     type="text"
@@ -83,5 +83,61 @@
       <input name="female" type="checkbox" /><label>Female</label>
     </span>
     <button type="button" id="addButton" onclick="addUser();">Add</button>
-  </div>
+  </div> -->
+  <!-- <div>
+    <section class="example-section">
+      <mat-form-field class="name-fields">
+        <mat-label>First name</mat-label>
+        <input matInput type="text" [(ngModel)]="value" />
+      </mat-form-field>
+
+      <mat-form-field class="name-fields">
+        <mat-label>Last name</mat-label>
+        <input matInput type="text" [(ngModel)]="value" />
+      </mat-form-field>
+    </section>
+  </div> -->
+  <form class="example-form" [formGroup]="userAddressValidations">
+    <table class="example-full-width" cellspacing="3" style="border:none">
+      <tr>
+        <td style="border:none">
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              placeholder="First Name"
+              formControlName="firstName"
+            />
+            <mat-error
+              *ngIf="
+                userAddressValidations.get('firstName').hasError('required')
+              "
+            >
+              First Name is Required!
+            </mat-error>
+            <mat-error
+              *ngIf="
+                userAddressValidations.get('firstName').hasError('minlength')
+              "
+            >
+              First Name should be atleast 4 characters long!
+            </mat-error>
+
+            <mat-error
+              *ngIf="
+                userAddressValidations.get('firstName').hasError('pattern')
+              "
+            >
+              First Name must follow this pattern: [a-zA-Z]!
+            </mat-error>
+          </mat-form-field>
+        </td>
+        <td style="border:none">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </form>
 </div>
