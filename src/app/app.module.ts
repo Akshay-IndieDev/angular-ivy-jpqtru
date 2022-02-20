@@ -9,6 +9,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { SearchPipe } from '../app/search.pipe';
 
 @NgModule({
   imports: [
@@ -20,8 +22,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatTableModule,
   ],
-  declarations: [AppComponent, HelloComponent],
+  declarations: [AppComponent, HelloComponent, SearchPipe],
   bootstrap: [AppComponent],
+  providers: [],
 })
 export class AppModule {}
