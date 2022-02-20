@@ -10,7 +10,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
-import { SearchPipe } from '../app/search.pipe';
 
 @NgModule({
   imports: [
@@ -24,7 +23,7 @@ import { SearchPipe } from '../app/search.pipe';
     BrowserAnimationsModule,
     MatTableModule,
   ],
-  declarations: [AppComponent, HelloComponent, SearchPipe],
+  declarations: [AppComponent, HelloComponent],
   bootstrap: [AppComponent],
   providers: [],
 })

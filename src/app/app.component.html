@@ -28,10 +28,8 @@
     <mat-form-field class="px-16" style="width: 100%">
       <input
         matInput
-        #filter
-        placeholder="Search..."
-        autocomplete="off"
-        style="width: 100%"
+        (keyup)="applyFilter($any($event.target).value)"
+        placeholder="Search👓"
       />
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
@@ -40,10 +38,12 @@
 
 <!-- Table for JSON data -->
 <div>
-  <table id="userTable"
-    style="width:100%"
+  <mat-table
+    #table
+    style="float:center"
+    id="userTable"
     mat-table
-    [dataSource]="dataSource | search: 'name':filter.value"
+    [dataSource]="dataSource"
     class="mat-elevation-z8"
   >
     <!--- Note that these columns can be defined in any order.
@@ -80,7 +80,7 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
+  </mat-table>
 </div>
 
 <div>
