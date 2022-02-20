@@ -87,7 +87,7 @@ p {
   font-size: 16px;
 }
 
-table,
+/* table,
 th,
 td {
   border: 1px solid;
@@ -96,14 +96,26 @@ td {
   margin-top: 30px;
   margin-bottom: 30px;
   align-items: center;
-}
+} */
 
 #userTable thead,
 #userTable th {
+  background-color: rgb(127, 168, 255);
   text-align: center;
   font-weight: 600;
   font-size: 16px;
   margin-top: 30px;
   margin-bottom: 30px;
   align-items: center;
+  width: 100%;
+  color: rgb(19, 38, 148);
+}
+
+#userTable td {
+  text-align: center;
+  color: rgb(43, 6, 58);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+  width: 100%;
 }

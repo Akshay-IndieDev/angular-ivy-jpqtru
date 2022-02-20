@@ -37,15 +37,8 @@
 </div>
 
 <!-- Table for JSON data -->
-<div>
-  <mat-table
-    #table
-    style="float:center"
-    id="userTable"
-    mat-table
-    [dataSource]="dataSource"
-    class="mat-elevation-z8"
-  >
+<div class="example-container mat-elevation-z8">
+  <table id="userTable" #table mat-table [dataSource]="dataSource">
     <!--- Note that these columns can be defined in any order.
       The actual rendered columns are set as a property on the row definition" -->
 
@@ -80,9 +73,8 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </mat-table>
+  </table>
 </div>
-
 <div>
   <h1>Add New Candidate</h1>
 
