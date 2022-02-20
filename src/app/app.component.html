@@ -11,25 +11,12 @@
         >Female</mat-checkbox
       >
     </section>
-    <!-- Search Bar -->
-    <!-- <mat-form-field class="example-form-field" appearance="fill">
-      <mat-label>Search🔎</mat-label>
-      <input matInput type="text" [(ngModel)]="value" />
-      <button
-        *ngIf="value"
-        matSuffix
-        mat-icon-button
-        aria-label="Clear"
-        (click)="value = ''"
-      >
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field> -->
+    <!-- Search bar: Using first/last name/email -->
     <mat-form-field class="px-16" style="width: 100%">
       <input
         matInput
         (keyup)="applyFilter($any($event.target).value)"
-        placeholder="Search👓"
+        placeholder="Search (first/last/email)👓"
       />
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>

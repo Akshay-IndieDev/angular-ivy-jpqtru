@@ -22,7 +22,8 @@ interface USERS {
 export interface USERSTITLE {
   id: Number;
   first_name: String;
-  gender: String;
+  last_name: String;
+  email: String;
 }
 
 @Component({
@@ -70,10 +71,12 @@ export class AppComponent {
     this.dataSource.filterPredicate = function (data, filter: string): boolean {
       var dataa = Users_Title.filter((element) => element.id == data.id);
       return (
-        data.id.toString().toLowerCase().includes(filter) ||
-        data.gender.toString().toLowerCase().includes(filter) ||
-        data.id.toString().toLowerCase() === filter ||
+        data.email.toString().toLowerCase().includes(filter) ||
         dataa[0].first_name
+          .toString()
+          .toLowerCase()
+          .includes(filter.toLowerCase()) ||
+        dataa[0].last_name
           .toString()
           .toLowerCase()
           .includes(filter.toLowerCase())
@@ -114,28 +117,84 @@ const Users: USERS[] = [
     email: 'wvalek3@vk.com',
     gender: 'Male',
   },
+  {
+    id: 5,
+    first_name: 'Thomas',
+    last_name: 'Burke',
+    email: 'tbburke@census.gov',
+    gender: 'Male',
+  },
+  {
+    id: 6,
+    first_name: 'Stephie',
+    last_name: 'Simpson',
+    email: 'ssimpson@senate.gov',
+    gender: 'Female',
+  },
+  {
+    id: 7,
+    first_name: 'Natalie',
+    last_name: 'Evans',
+    email: 'nevans98@imageshack.us',
+    gender: 'Female',
+  },
+  {
+    id: 8,
+    first_name: 'William',
+    last_name: 'Zhang',
+    email: 'wzhang3@vk.com',
+    gender: 'Male',
+  },
 ];
 
 const Users_Title: USERSTITLE[] = [
   {
     id: 1,
     first_name: 'Jeanette',
-    gender: 'Female',
+    last_name: 'Penddreth',
+    email: 'jpenddreth0@census.gov',
   },
   {
     id: 2,
     first_name: 'Giavani',
-    gender: 'Male',
+    last_name: 'Frediani',
+    email: 'gfrediani1@senate.gov',
   },
   {
     id: 3,
     first_name: 'Noell',
-    gender: 'Female',
+    last_name: 'Bea',
+    email: 'nbea2@imageshack.us',
   },
   {
     id: 4,
     first_name: 'Willard',
-    gender: 'Male',
+    last_name: 'Valek',
+    email: 'wvalek3@vk.com',
+  },
+  {
+    id: 5,
+    first_name: 'Thomas',
+    last_name: 'Burke',
+    email: 'tbburke@census.gov',
+  },
+  {
+    id: 6,
+    first_name: 'Stephie',
+    last_name: 'Simpson',
+    email: 'ssimpson@senate.gov',
+  },
+  {
+    id: 7,
+    first_name: 'Natalie',
+    last_name: 'Evans',
+    email: 'nevans98@imageshack.us',
+  },
+  {
+    id: 8,
+    first_name: 'William',
+    last_name: 'Zhang',
+    email: 'wzhang3@vk.com',
   },
 ];
 
@@ -144,7 +203,7 @@ const Users_Title: USERSTITLE[] = [
 })
 export class OrdinalPipe implements PipeTransform {
   transform(value: Number): String {
-    var data = Users_Title.filter((element) => element.id === value);
+    var data = Users_Title.filter((user) => user.id === value);
     return data[0].first_name;
   }
 }
