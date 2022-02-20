@@ -3,11 +3,19 @@
   <form layout-align="center center" layout="column" style="display: flex">
     <!-- Checkbox group -->
     <section class="example-section">
-      <mat-checkbox>Male</mat-checkbox>
+      <mat-checkbox
+        name="male"
+        (ngModelChange)="isMaleChecked($event)"
+        [ngModel]="isMale"
+        >Male</mat-checkbox
+      >
       <mat-checkbox
         style="
       margin-left:200px;
   "
+        name="female"
+        (ngModelChange)="isFemaleChecked($event)"
+        [ngModel]="isFemale"
         >Female</mat-checkbox
       >
     </section>
@@ -16,7 +24,7 @@
       <input
         matInput
         (keyup)="applyFilter($any($event.target).value)"
-        placeholder="Search (first/last/email)👓"
+        placeholder="Search👓"
       />
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
