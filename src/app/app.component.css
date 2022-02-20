@@ -46,10 +46,6 @@ p {
   width: 50%;
 }
 
-.myCard {
-  padding: 0%;
-}
-
 ::ng-deep .mat-checkbox-ripple .mat-ripple-element {
   background-color: rgb(68, 66, 77) !important;
 }
@@ -62,20 +58,6 @@ p {
   margin-left: 180px;
 }
 
-.myLastNamebox {
-  margin: 0px 0px 20px 60px;
-  display: inline-block;
-}
-
-.myFirstNamebox {
-  margin: 0px 0px 0px 0px;
-  display: inline-block;
-}
-
-.myEmailText {
-  margin-top: 5px;
-  width: 72%;
-}
 .button {
   background-color: rgb(22, 75, 248);
   border: none;
@@ -87,27 +69,17 @@ p {
   font-size: 16px;
 }
 
-/* table,
-th,
-td {
-  border: 1px solid;
-  margin: 0px;
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  align-items: center;
-} */
 
 #userTable thead,
 #userTable th {
+  padding-right: 22.15px;
   background-color: rgb(127, 168, 255);
   text-align: center;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 30px;
   margin-bottom: 30px;
   align-items: center;
-  width: 100%;
   color: rgb(19, 38, 148);
 }
 
@@ -118,4 +90,75 @@ td {
   margin-bottom: 30px;
   align-items: center;
   width: 100%;
+}
+
+.example-container.mat-elevation-z8 {
+  margin-top: 30px;
+}
+
+.bottomForm {
+  margin-top: 30px;
+}
+
+.mat-column-id {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-first_name {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 40% !important;
+  width: 40% !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-last_name {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 24% !important;
+  width: 24% !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-email {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 21.5% !important;
+  width: 21.5% !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.mat-column-gender {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  font-size: 13px;
 }
