@@ -1,4 +1,4 @@
-<h1 class="noMargin" style="margin-left:10px">Candidates</h1>
+<h1 class="noMargin">Candidates</h1>
 <div class="example-margin">
   <form layout-align="center center" layout="column" style="display: flex">
     <!-- Checkbox group -->
@@ -66,7 +66,7 @@
   <h1 class="noMargin">Add New Candidate</h1>
 
   <form class="example-form" [formGroup]="userAddressValidations">
-    <table class="example-full-width" cellspacing="3" style="border:none">
+    <table class="example-full-width" cellspacing="2" style="border:none">
       <tr>
         <td style="border:none">
           <mat-form-field class="example-full-width">
@@ -100,7 +100,11 @@
           </mat-form-field>
         </td>
         <td style="border:none">
-          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-form-field
+            class="example-full-width"
+            appearance="fill"
+            style="padding-left:20px"
+          >
             <mat-label>Last Name</mat-label>
             <input matInput />
           </mat-form-field>
