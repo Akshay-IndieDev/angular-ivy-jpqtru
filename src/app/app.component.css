@@ -69,10 +69,8 @@ p {
   font-size: 16px;
 }
 
-
 #userTable thead,
 #userTable th {
-  padding-right: 22.15px;
   background-color: rgb(127, 168, 255);
   text-align: center;
   font-weight: 600;
@@ -140,8 +138,8 @@ p {
 .mat-column-email {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 21.5% !important;
-  width: 21.5% !important;
+  flex: 0 0 22% !important;
+  width: 22% !important;
   overflow-wrap: break-word;
   word-break: break-word;
   -ms-hyphens: auto;
@@ -152,13 +150,12 @@ p {
 .mat-column-gender {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 10% !important;
-  width: 10% !important;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  flex: 0 0 15% !important;
+  width: 15% !important;
   -ms-hyphens: auto;
   -moz-hyphens: auto;
+  justify-content: center;
   -webkit-hyphens: auto;
   hyphens: auto;
-  font-size: 13px;
+  padding-right: 24px !important;
 }
