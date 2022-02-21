@@ -55,13 +55,13 @@ p {
   display: flex;
 }
 
-.alert{
+.alert {
   color: red;
   font-size: 16px;
-  margin-left:  20px;
+  margin-left: 20px;
 }
 
-.myError{
+.myError {
   float: left;
 }
 
@@ -104,14 +104,12 @@ table {
 
 #userTable thead,
 #userTable th {
-  background-color: rgb(89, 146, 231);
   text-align: center;
   font-weight: 600;
   font-size: 14px;
   margin-top: 10px;
   margin-bottom: 30px;
   align-items: center;
-  color: rgb(255, 255, 255);
   border-bottom: none;
 }
 
