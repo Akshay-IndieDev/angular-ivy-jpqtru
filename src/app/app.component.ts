@@ -2,6 +2,7 @@ import { Component, VERSION, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Pipe, PipeTransform } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatSort} from '@angular/material/sort';
 
 interface USERS {
   id: Number;
@@ -29,6 +30,12 @@ export class AppComponent {
   email: String;
   gender: String;
   public isVisible: boolean = false;
+
+  @ViewChild(MatSort) sort: MatSort;
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+  }
 
   handleInput(event: Event) {
     this.value = (event.target as HTMLInputElement).value;

@@ -102,7 +102,6 @@ table {
   background-color: transparent !important;
 }
 
-#userTable thead,
 #userTable th {
   background-color: #336dff;
   text-align: center;
@@ -113,6 +112,16 @@ table {
   align-items: center;
   border-bottom: none;
   color: white;
+}
+
+.header-1 {
+  color: aliceblue;
+  padding-left: 130px;
+}
+
+.header-2 {
+  color: aliceblue;
+  padding-left: 160px;
 }
 
 #userTable td {
@@ -147,7 +156,7 @@ table {
   word-wrap: break-word !important;
   white-space: unset !important;
   flex: 0 0 40% !important;
-  width: 40% !important;
+  width: 20% !important;
   overflow-wrap: break-word;
   word-break: break-word;
   -ms-hyphens: auto;
