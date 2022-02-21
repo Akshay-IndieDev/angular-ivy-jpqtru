@@ -45,8 +45,14 @@ p {
   margin-left: 10px;
 }
 
-.myCard{
-  
+#myCard {
+  border-radius: 2em;
+}
+.submitForm {
+  justify-content: center;
+  align-content: center;
+  align-items: stretch;
+  display: flex;
 }
 
 .example-form-field {

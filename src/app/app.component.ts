@@ -42,10 +42,10 @@ export class AppComponent {
   ];
   dataSource = new MatTableDataSource<USERS>(Users);
 
-  userAddressValidations: FormGroup;
+  userFormValidations: FormGroup;
   constructor(private formBuilder: FormBuilder) {}
   ngOnInit() {
-    this.userAddressValidations = this.formBuilder.group({
+    this.userFormValidations = this.formBuilder.group({
       firstName: [
         '',
         [
@@ -56,7 +56,7 @@ export class AppComponent {
         ],
       ],
       lastName: ['', []],
-      gender: ['', []],
+      gender: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
     });
 
@@ -114,10 +114,10 @@ export class AppComponent {
   }
 
   addUser() {
-    this.firstName = this.userAddressValidations.get('firstName')?.value;
-    this.lastName = this.userAddressValidations.get('lastName')?.value;
-    this.email = this.userAddressValidations.get('email')?.value;
-    this.gender = this.userAddressValidations.get('gender')?.value;
+    this.firstName = this.userFormValidations.get('firstName')?.value;
+    this.lastName = this.userFormValidations.get('lastName')?.value;
+    this.email = this.userFormValidations.get('email')?.value;
+    this.gender = this.userFormValidations.get('gender')?.value;
 
     if ('' != this.firstName && '' != this.email && '' != this.gender) {
       const newId = this.dataSource.data.length + 1;
