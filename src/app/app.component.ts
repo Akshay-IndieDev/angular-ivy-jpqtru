@@ -1,15 +1,7 @@
 import { Component, VERSION } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Pipe, PipeTransform } from '@angular/core';
-import { MatCheckboxChange } from '@angular/material/checkbox';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  FormGroupDirective,
-  NgForm,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 interface USERS {
   id: Number;
@@ -30,15 +22,16 @@ export class AppComponent {
   filterValues: any = {};
   isMale = false;
   isFemale = false;
+  mInput = false;
+  fInput = false;
+  firstName: String;
+  lastName: String;
+  email: String;
+  gender: String;
 
   handleInput(event: Event) {
     this.value = (event.target as HTMLInputElement).value;
   }
-
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
 
   displayedColumns: string[] = [
     'id',
@@ -62,6 +55,9 @@ export class AppComponent {
           Validators.pattern('[a-zA-Z]+'),
         ],
       ],
+      lastName: ['', []],
+      gender: ['', []],
+      email: ['', [Validators.required, Validators.email]],
     });
 
     this.dataSource.filterPredicate = function (data, filter: string): boolean {
@@ -117,8 +113,38 @@ export class AppComponent {
     else this.resetFilters();
   }
 
-  onChange(){
-    this.isMale = !this.isMale;
+  addUser() {
+    this.firstName = this.userAddressValidations.get('firstName')?.value;
+    this.lastName = this.userAddressValidations.get('lastName')?.value;
+    this.email = this.userAddressValidations.get('email')?.value;
+    this.gender = this.userAddressValidations.get('gender')?.value;
+
+    if ('' != this.firstName && '' != this.email && '' != this.gender) {
+      const newId = this.dataSource.data.length + 1;
+      //Add data to a temp. const vaariable
+      const record = this.dataSource.data;
+      record.push(
+        this.createInputData(
+          newId,
+          this.firstName,
+          this.lastName,
+          this.email,
+          this.gender
+        )
+      );
+      this.dataSource.data = record;
+    } else {
+    }
+  }
+
+  createInputData(id, firstname, lastname, email, gender): USERS {
+    return {
+      id: id,
+      first_name: firstname,
+      last_name: lastname,
+      email: email,
+      gender: gender,
+    };
   }
 }
 
@@ -180,11 +206,6 @@ const Users: USERS[] = [
     gender: 'Male',
   },
 ];
-
-class GENDER {
-  gender: String;
-  isSelected: Boolean;
-}
 
 @Pipe({
   name: 'FilterData',

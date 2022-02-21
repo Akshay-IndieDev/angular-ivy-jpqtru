@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { MatTableModule } from '@angular/material/table';
     MatCardModule,
     MatCheckboxModule,
     MatInputModule,
+    MatRadioModule,
     MatIconModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

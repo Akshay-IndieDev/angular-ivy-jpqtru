@@ -24,7 +24,7 @@
       <input
         matInput
         (keyup)="applyFilter($any($event.target).value)"
-        placeholder="Search👓"
+        placeholder="Who are you looking for👓"
       />
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
@@ -39,7 +39,7 @@
 
     <!-- Id Column -->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <th mat-header-cell *matHeaderCellDef>#</th>
       <td mat-cell *matCellDef="let user">{{ user.id }}</td>
     </ng-container>
 
@@ -71,85 +71,86 @@
   </table>
 </div>
 <div>
+  
+  <mat-card>
   <h1 class="noMargin">Add New Candidate</h1>
+    <form class="example-form" [formGroup]="userAddressValidations">
+      <table class="example-full-width" cellspacing="2" style="border:none">
+        <tr>
+          <td style="border:none">
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="First Name"
+                formControlName="firstName"
+              />
+              <mat-error
+                *ngIf="
+                  userAddressValidations.get('firstName').hasError('required')
+                "
+              >
+                First Name is Required!
+              </mat-error>
+              <mat-error
+                *ngIf="
+                  userAddressValidations.get('firstName').hasError('minlength')
+                "
+              >
+                First Name should be atleast 4 characters long!
+              </mat-error>
 
-  <form class="example-form" [formGroup]="userAddressValidations">
-    <table class="example-full-width" cellspacing="2" style="border:none">
-      <tr>
-        <td style="border:none">
-          <mat-form-field class="example-full-width">
-            <input
-              matInput
-              placeholder="First Name"
-              formControlName="firstName"
-            />
-            <mat-error
-              *ngIf="
-                userAddressValidations.get('firstName').hasError('required')
-              "
+              <mat-error
+                *ngIf="
+                  userAddressValidations.get('firstName').hasError('pattern')
+                "
+              >
+                First Name must follow this pattern: [a-zA-Z]!
+              </mat-error>
+            </mat-form-field>
+          </td>
+          <td style="border:none">
+            <mat-form-field
+              class="example-full-width"
+              appearance="fill"
+              style="padding-left:20px"
             >
-              First Name is Required!
-            </mat-error>
-            <mat-error
-              *ngIf="
-                userAddressValidations.get('firstName').hasError('minlength')
-              "
-            >
-              First Name should be atleast 4 characters long!
-            </mat-error>
+              <mat-label>Last Name</mat-label>
+              <input matInput formControlName="lastName" />
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
 
-            <mat-error
-              *ngIf="
-                userAddressValidations.get('firstName').hasError('pattern')
-              "
-            >
-              First Name must follow this pattern: [a-zA-Z]!
-            </mat-error>
-          </mat-form-field>
-        </td>
-        <td style="border:none">
-          <mat-form-field
-            class="example-full-width"
-            appearance="fill"
-            style="padding-left:20px"
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          matInput
+          placeholder="Ex. abc@example.com"
+          formControlName="email"
+        /><mat-error
+          *ngIf="userAddressValidations.get('email').hasError('required')"
+        >
+          Email is Required!
+        </mat-error>
+      </mat-form-field>
+
+      <section class="example-section">
+        <mat-radio-group formControlName="gender">
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female" style="margin-left:50px"
+            >Female</mat-radio-button
           >
-            <mat-label>Last Name</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Email</mat-label>
-      <input
-        type="email"
-        matInput
-        [formControl]="emailFormControl"
-        placeholder="Ex. abc@example.com"
-      />
-      <mat-error
-        *ngIf="
-          emailFormControl.hasError('email') &&
-          !emailFormControl.hasError('required')
-        "
-      >
-        Please enter a valid email address
-      </mat-error>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
-        Email is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-
-    <section class="example-section">
-      <mat-checkbox>Male</mat-checkbox>
-      <mat-checkbox
-        style="
-  margin-left: 350px;
-"
-        >Female</mat-checkbox
-      >
-      <button class="myButton" mat-raised-button color="primary">Add</button>
-    </section>
-  </form>
+        </mat-radio-group>
+        <button
+          class="myButton"
+          mat-raised-button
+          color="primary"
+          (click)="addUser()"
+        >
+          Add
+        </button>
+      </section>
+    </form>
+  </mat-card>
 </div>
