@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
-import { MatSortModule, MatSort } from '@angular/material/sort';
+import { MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   imports: [
@@ -26,7 +26,6 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
     BrowserAnimationsModule,
     MatTableModule,
     MatSortModule,
-    MatSort
   ],
   declarations: [AppComponent, HelloComponent],
   bootstrap: [AppComponent],

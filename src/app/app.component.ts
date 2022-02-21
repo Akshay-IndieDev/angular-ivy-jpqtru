@@ -2,7 +2,6 @@ import { Component, VERSION, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Pipe, PipeTransform } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MatSort } from '@angular/material/sort';
 
 interface USERS {
   id: Number;
@@ -43,8 +42,6 @@ export class AppComponent {
     'gender',
   ];
   dataSource = new MatTableDataSource<USERS>(Users);
-
-  @ViewChild(MatSort) sort: MatSort;
 
   userFormValidations: FormGroup;
   constructor(private formBuilder: FormBuilder) {}
