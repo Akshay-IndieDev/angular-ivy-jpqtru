@@ -114,13 +114,17 @@ table {
   color: white;
 }
 
+::ng-deep .mat-sort-header-arrow {
+  color: #fff;
+}
+
 .header-1 {
-  color: aliceblue;
+  background: aliceblue;
   padding-left: 130px;
 }
 
 .header-2 {
-  color: aliceblue;
+  background: aliceblue;
   padding-left: 160px;
 }
 
