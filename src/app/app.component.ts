@@ -28,6 +28,7 @@ export class AppComponent {
   lastName: String;
   email: String;
   gender: String;
+  public isVisible: boolean = false;
 
   handleInput(event: Event) {
     this.value = (event.target as HTMLInputElement).value;
@@ -134,6 +135,11 @@ export class AppComponent {
       );
       this.dataSource.data = record;
     } else {
+      if (this.isVisible) {
+        return;
+      }
+      this.isVisible = true;
+      setTimeout(() => (this.isVisible = false), 2500);
     }
   }
 

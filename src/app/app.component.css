@@ -55,6 +55,16 @@ p {
   display: flex;
 }
 
+.alert{
+  color: red;
+  font-size: 16px;
+  margin-left:  20px;
+}
+
+.myError{
+  float: left;
+}
+
 .example-form-field {
   width: 50%;
 }
